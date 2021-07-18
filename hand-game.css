@@ -1,0 +1,105 @@
+body {
+    background-color: #ae876b;
+    max-width: 100%;
+    min-height: max-content;
+    font-family: sans-serif;    
+}
+
+h1 {
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+img {
+    padding: 5px;
+    max-width: 75px;
+}
+
+
+#header {
+    display: flex;
+    flex-direction: row;
+}
+
+#header a {
+    text-decoration: none;
+    color: #724c21;
+    font-size: 4rem;
+    margin: 15px;
+}
+
+#header .logo {
+    margin: 15px;
+}
+
+#header h1 {
+    color: #f9b23d;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+/*
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 50%;
+    margin: 30px auto;  
+}   
+
+#player {
+    text-align: center;
+    align-self: center;
+}
+
+.batu, .gunting, .kertas {
+    transition: 0.1s;
+    position: relative;
+    cursor: pointer;
+}
+
+#versus {
+    text-align: center;
+    align-self: center;
+    color: #bd0000;
+    font-size: 5em;
+    font-weight: bold;
+}
+
+#computer {
+    text-align: center;
+    align-self: center;
+}
+*/
+.row {
+    text-align: center;
+}
+
+.batu, .gunting, .kertas {
+    position: relative;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.computerRandom {
+    position: relative;
+    cursor: pointer;
+    margin: 20px;
+}
+
+#versus {
+    text-align: center;
+    align-self: center;
+    color: #bd0000;
+    font-size: 5em;
+    font-weight: bold;
+}
+
+#refresh {
+    text-align: center;
+    cursor: pointer;
+}
