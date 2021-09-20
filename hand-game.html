@@ -25,47 +25,45 @@
 
     <div class="container">
         <div class="row">
-            <div class="col" id="player">
-                <div class="">
+            <div class="col-5" id="me">
+                <div>
                     <h1>ME</h1>
                 </div>
-                <div class="jari jari-batu">
+                <div id="me-batu" onclick="selectMe('#me-batu')">
                     <img src="assets/batu.png" class="batu">
                 </div>
-                <div class="jari jari-kertas">
+                <div id="me-kertas" onclick="selectMe('#me-kertas')">
                     <img src="assets/kertas.png" class="kertas">
                 </div>
-                <div class="jari jari-gunting" id="gunting">
+                <div id="me-gunting" onclick="selectMe('#me-gunting')">
                     <img src="assets/gunting.png" class="gunting">
                 </div>
             </div>
 
-            <div class="col" id="info">
-                <h3>VS</h3>
-                <div class="pemenang">
-                    <p>WINNER</p>
-                </div>
+            <div class="col-2" id="info">
+                <h3>VS</h3>                
+                <p>THE WINNER</p>
             </div>
 
-            <div class="col" id="computer">
+            <div class="col-5" id="computer">
                 <div>
                     <h1>COMPUTER</h1>
                 </div>
-                <div class="jari jari-batu">
+                <div id="com-batu">
                     <img src="assets/batu.png" class="batu">
                 </div>
-                <div class="jari jari-kertas">
+                <div id="com-kertas">
                     <img src="assets/kertas.png" class="kertas">
                 </div>
-                <div class="jari jari-gunting">
+                <div id="com-gunting">
                     <img src="assets/gunting.png" class="gunting">
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col" id="refresh">
-                <img src="assets/refresh.png" class="refresh">
+            <div class="col" id="refresh" onclick="refresh()">
+                <img src="assets/refresh.png">
             </div>
         </div>
     </div>

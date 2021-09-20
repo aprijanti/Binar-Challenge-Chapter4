@@ -1,58 +1,67 @@
-const playerRock = document.querySelector("#player .jari-batu");
-const playerScissor = document.querySelector("#player .jari-gunting");
-const playerPpaper = document.querySelector("#player .jari-kertas");
-const computerRock = document.querySelector("#computer .jari-batu");
-const computerScissor = document.querySelector("#computer .jari-gunting");
-const computerPpaper = document.querySelector("#computer .jari-kertas");
-const info = document.querySelector("#info");
-const playerPictures = document.querySelectorAll("#player .jari");
-const computerPicture = document.querySelector("#computer .jari");
-refresh = document.querySelector("#refresh");
+function selectMe(selector) {
+    const isElementExist = document.querySelectorAll('.bg-selected')
+    let isSame = false
+    isElementExist.forEach((element) => {
+        const id = element.id
+        const prefix = id.split('-')[0]
 
-// Fungsi Pilihan Random Computer
-const computerChoise = function () {
-    const comp = Math.floor(Math.random() * 3) + 1;
-    if (comp == 1) {
-        return "rock";
-    } else if (comp == 2) {
-        return "paper";
-    } else {
-        return "scissor";
+        const prefixSelector = selector.split('-')[0]
+
+        if (prefixSelector === '#${prefeix}') {
+            isSame = true
+        }
+    })
+
+    if (isSame) {
+        return
     }
-};
+
+    const element = document.querySelector(selector)
+    element.className += "bg-selected"
+
+    const isSelected = document.querySelectorAll('.bg-selected')
+    const selectOne = isSelected[0].id
+    const objOfOne = changeToObject(selectOne)
+    const me = objOfOne['me']
+}
+
+const changeToObject = (strSelected) => {
+    const arrOfSelected = strSelected.split('-')
+
+    if (arrOfSelected[0] === 'me') {
+        return {
+            me: arrOfSelected[1]
+        }
+    } else {
+        return {
+            computer: arrOfSelected[1]
+        }
+    }
+}
 
 // Aturan Game
-const draw = "draw",
-    playerWin = "you<br>win",
-    computerWin = "computer<br>win";
-
-const rules = function (computer, player) {
-    if (computer == player) {
-        return draw;
-    } else if (player == "rock" && comp == "scissor") {
-        return playerWin;
-    } else if (player == "paper" && comp == "rock") {
-        return playerWin;
-    } else if (player == "scissor" && comp == "paper") {
-        return playerWin;
-    } else {
-        return computerWin;
+function getRules(me, computer) {
+    if (me === computer) {
+        return "DRAW"
+    } else if (me === 'batu'){
+        return computer === 'gunting' ? "I WIN" : "COMPUTER WIN"
+    } else if (me === 'kertas') {
+        return computer === 'batu' ? "I WIN" : "COMPUTER WIN"
+    } else if (me === 'gunting') {
+        return computer === 'kertas' ? "I WIN" : "COMPUTER WIN"
     }
+    return "PILIHAN TIDAK TERSEDIA"
 };
 
-// Box Pemenang
-const box = function (element) {
-    element.style.backgroundColor = "#c4c4c4";
-    element.style.borderRadius = "10px";
-    element.style.width = "100px";
-    element.style.boxShadow = "0 0 5px 5px rgba(0, 0, 0, 0.3)";
-  };
+// Pilihan Random Computer
+function pickComputer() {
+    const pilihan = new Array("batu","gunting","kertas");
+    const randomNum = Math.floor(Math.random() * pickComputer.length);
+    return pickComputer[randomNum]
 
-  // Menghapus Box Pemenang
-  const unbox = function (element) {
-    element.style.removeProperty("box-shadow");
-    element.style.removeProperty("background-color");
-    element.style.removeProperty("border-radius");
-  };
+    document.querySelector('#com-${result}').className += "bg-selected"
+}
 
-  
+const refresh = () => {
+    document.location.reload();
+}
